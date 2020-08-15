@@ -1,0 +1,43 @@
+export const colors = {
+    red_1:          '#F20732',
+    red_2:          '#F20505',
+    red_3:          '#F9637C',
+    orange:         '#FFAC40',
+    green:          '#52de97',
+    green_2:        '#1fab89',
+    green_3:        '#8FD6AA',
+    green_blue:     '#43B0AF',
+    blue_1:         '#77BCEF', // Background & Buttons
+    blue_2:         '#5E8AFD',
+    blue_3:         '#4F6AFC',
+    blue_4:         '#4A52FC',    
+    blue_5:         '#006DEB', // new
+    blue_6:         '#213FE8', // Background    
+    blue_7:         '#131D77',
+    purple:         '#4048C9',
+    purple_2:       '#504A9E',
+    purple_light:   '#C09CD9',
+    purple_pink:    '#AB05F2',
+    txt_1:          '#354148',
+    txt_2:          '#434F73',    
+    txt_3:          '#B2B2B2',
+    txt_light:      '#f2f2f2',
+    label:          '#999999',
+    white_1:        '#ffffff',    
+    white_2:        '#E0E5EC',
+    white_3:        '#DEE8F2',
+    dark_shadow:    '#CFDBE8',
+    light_shadow:   '#EDF2F8',
+    highlight:      '#e6eff4',
+    noryan_red:     '#F93B26', 
+    noryan_yellow:  '#EDDD1D',
+    noryan_blue:    '#0096DA',
+    noryan_green:   '#008F41',
+    noryan_prpl:    '#A64579',
+    noryan_prpe_drk:'#232783',
+    white_trans:    'rgb(255,255,255, 0.2)',
+    shadow_light:   'rgb(119,188,239, 0.5)',
+    shadow_dark:    'rgb(94,138,253, 0.5)',
+};
+
+
