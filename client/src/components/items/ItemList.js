@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import { useParams } from 'react-router-dom';
 import ItemListCard from '../../layout/ItemListCard';
 import {ItemListContainer} from '../../elements/Container';
 import {listItems} from '../../actions/itemActions';
 import SearchBar from '../../layout/SearchBar';
 import Loader from '../../elements/Loader';
 
-const ItemList = ({match }) => {
+const ItemList = () => {
     
     const [searchKeyword, setSearchKeyword] = useState('');
     const [size, setSize] = useState('');
@@ -17,10 +18,12 @@ const ItemList = ({match }) => {
     const dispatch = useDispatch();
     let result;
 
+    let { category } = useParams();
+
     useEffect( () => {
 
-        dispatch(listItems(match.params.category, null, null, null))
-    },[dispatch, match.params.category]);
+        dispatch(listItems(category, null, null, null))
+    },[dispatch, category]);
 
  
     const searchHandler = (e) => {                
@@ -38,24 +41,23 @@ const ItemList = ({match }) => {
     const sizeHandler = (e) => {      
       const size = e.target.value;
       setSize(e.target.value);
-      dispatch(listItems(match.params.category, size, null , price));
+      dispatch(listItems(category, size, null , price));
     }
 
     const priceHandler = (e) => {
       const price = e.target.value;
-      setPrice(e.target.value);
-      console.log(price)
+      setPrice(e.target.value);      
       if (size === ''){
         if(price === "-precio" || price === "precio"){
-            dispatch(listItems(match.params.category, null, null , price));
+            dispatch(listItems(category, null, null , price));
         } else if(price === "precio[lte]=1500" || "precio[lte]=3000" || "precio[lte]=4500"){
-            dispatch(listItems(match.params.category, null, price , null));
+            dispatch(listItems(category, null, price , null));
         }
       } else if (size !== '') {
         if(price === "-precio" || price === "precio"){
-            dispatch(listItems(match.params.category, size, null , price));
+            dispatch(listItems(category, size, null , price));
         } else if(price === "precio[lte]=1500" || "precio[lte]=3000" || "precio[lte]=4500"){
-            dispatch(listItems(match.params.category, size, price , null));
+            dispatch(listItems(category, size, price , null));
         }
       }
     }
@@ -69,7 +71,7 @@ const ItemList = ({match }) => {
         priceHandler={priceHandler}
         />
       <ItemListContainer>
-        <h3>{match.params.category}</h3>
+        <h3>{category}</h3>
         {result && result.map( (item,idx) =>              
             <ItemListCard                     
                 key={idx}
@@ -78,7 +80,7 @@ const ItemList = ({match }) => {
                 tamaño={item.tamaño}
                 precio={ new Intl.NumberFormat().format(item.precio)}
                 paquete={item.paquete}
-                category={match.params.category}
+                category={category}
                 fotoCover={item.fotoCover}
                 idx={item.indice}
                 linkTo={'renta'}
@@ -91,15 +93,3 @@ const ItemList = ({match }) => {
 
 export default ItemList;
 
-/*
- const setUrl = {    
-    all: `/items/${category}`,
-    size: `/items/${category}?tamaño=${size}`,
-    price: `/items/${category}?${price_cond}`,
-    sort: `/items/${category}?sort=${sortBy}`,    
-    sizeAndPrice: `/items/${category}?tamaño=${size}&${price_cond}`,
-    sizeAndSort: `/items/${category}?tamaño=${size}&sort=${sortBy}`,
-    allConditions: `/items/${category}?tamaño=${size}&${price_cond}&sort=${sortBy}`,
-  }
-
-*/

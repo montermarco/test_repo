@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import {setFlex, colors, below, fixed} from '../utilities';
 
 function NavBarBase({ className, open, onClick }) {
-
     return (
       <div className={className}>
         <ul className="nav_list" open={open} onClick={onClick}>

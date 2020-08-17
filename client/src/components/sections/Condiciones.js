@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Route } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import {colors, below} from '../../utilities';
 import ConditionsMenu from '../../layout/ConditionsMenu';
 import CondicionesRenta from '../../layout/CondicionesRenta';
@@ -11,15 +11,20 @@ import {SectionsContainer} from '../../elements/Container';
 
 
 const CondicionesBase = ({className}) => {
+    
+    let { path } = useRouteMatch();
+    console.log(path)
     return (
         <SectionsContainer className={className}>
                 <h2 className="condiciones">Condiciones</h2>
             <ConditionsMenu/>
             <div className="conditions_list">
-              <Route exact path={`/condiciones`} component={CondicionesRenta}/>
-              <Route exact path={`/condiciones/seguridad`} component={CondicionesSeguridad}/>
-              <Route exact path={`/condiciones/pago`} component={CondicionesPago}/>
-              <Route exact path={`/condiciones/cancelaciones`} component={CondicionesCancelacion}/>
+              <Switch>
+                <Route exact path={`${path}`} component={CondicionesRenta}/>
+                <Route exact path={`${path}/seguridad`} component={CondicionesSeguridad}/>
+                <Route exact path={`${path}/pago`} component={CondicionesPago}/>
+                <Route exact path={`${path}/cancelaciones`} component={CondicionesCancelacion}/>
+              </Switch>
             </div>
         </SectionsContainer>
     );

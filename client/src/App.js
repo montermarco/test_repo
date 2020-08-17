@@ -1,19 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import GlobalStyle from './GlobalStyle';
+import Routes from './components/routing/Routes';
 import {Wrapper} from './elements/Container';
-import Home from './components/sections/Home';
-import Renta  from './components/sections/Renta';
-import Venta  from './components/sections/Venta';
-import VentaCards from './layout/VentaCards';
-import Paquete  from './components/sections/Paquete';
-import Condiciones  from './components/sections/Condiciones';
-import Nosotros  from './components/sections/Nosotros';
-import Negocio  from './components/sections/Negocio';
-import Preguntas  from './components/sections/Preguntas';
 import Footer from './layout/Footer';
 import TopBar from './layout/TopBar';
 import NavBar from './layout/Navbar';
+import Home from './components/sections/Home';
+// import Renta  from './components/sections/Renta';
+// import Venta  from './components/sections/Venta';
+// import VentaCards from './layout/VentaCards';
+// import Paquete  from './components/sections/Paquete';
+// import Condiciones  from './components/sections/Condiciones';
+// import Nosotros  from './components/sections/Nosotros';
+// import Negocio  from './components/sections/Negocio';
+// import Preguntas  from './components/sections/Preguntas';
+
 
 function App() {
   return (  
@@ -23,6 +25,9 @@ function App() {
         <NavBar/>
 
         <Switch>
+        <Route exact path='/' component={Home} />
+        <Route component={Routes} />
+          {/* 
           <Route exact path='/' component={Home} />
           <Route path='/productos' component={Renta} />
           <Route path='/venta/catalogo' component={Venta} />
@@ -31,7 +36,9 @@ function App() {
           <Route path='/nosotros' component={Nosotros} />
           <Route path='/negocio' component={Negocio} />
           <Route path='/preguntas' component={Preguntas} />
-          <Route exact path='/venta' component={VentaCards}/>                        
+          <Route exact path='/venta' component={VentaCards}/>
+          */}
+          
         </Switch>
         <Footer/>
       
