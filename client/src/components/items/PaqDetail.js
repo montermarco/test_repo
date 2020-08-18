@@ -1,19 +1,21 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-//import useCustomFetch from '../../hooks/useCustomFetch';
+import {useParams} from 'react-router-dom';
 import {detailPackage} from '../../actions/itemActions';
 import {PaqDetailContainer} from '../../elements/Container';
 import ItemDetailCard from '../../layout/ItemDetailCard';
 
-function PaqDetail({match}) {
+function PaqDetail() {
 
     const packageDetail = useSelector(state => state.packageNoryan);
     const {packageNoryan, loading } = packageDetail;
     const dispatch = useDispatch();
 
+    let {id} =useParams();
+
     useEffect( () => {
-        dispatch(detailPackage(match.params.id))
-    }, [dispatch, match.params.id]);
+        dispatch(detailPackage(id))
+    }, [dispatch, id]);
     
     return (
         <PaqDetailContainer>
@@ -26,24 +28,9 @@ function PaqDetail({match}) {
                 medidas={packageNoryan.medidas}                      
                 fotoCover={packageNoryan.fotoCover}
             />  
-            }  
-
+            }
         </PaqDetailContainer>
     )
 }
 
 export default PaqDetail;
-
-/*
-    const [paquetesResponse, setPaquetesResponse] = useState([]);
-    const [url, setUrl] = useState(null);
-    const [results, result, err, loading, paquetes, paquete] = useCustomFetch(url);
-
-    useEffect( () => {
-        setUrl(`/paquetes/${match.params.id}`)
-    }, [url, match.params.id]);
-
-    useEffect( () => {
-        setPaquetesResponse(paquete)
-    }, [paquete]);
-    */

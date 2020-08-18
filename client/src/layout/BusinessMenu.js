@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import {setFlex, colors, elevation, demotion, below } from '../utilities';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 import Bill from '../elements/svg/Bill';
 import Functioning from '../elements/svg/Functioning';
 import Register from '../elements/svg/Register';
-import Download from '../elements/svg/Download';
 
 const BusinessMenuBase = ({ className }) => {
     
+    let { url } = useRouteMatch();
+    
     return (
-
         <div className={className}>
             <div className="table">
                 <ul className="nav_list">
@@ -18,7 +18,7 @@ const BusinessMenuBase = ({ className }) => {
                         <NavLink 
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/negocio`}>          
+                            exact to={`${url}/ventajas`}>          
                             <Bill className="icon" size={25}/>
                             <p className="text">Ventajas</p>
                         </NavLink>
@@ -27,7 +27,7 @@ const BusinessMenuBase = ({ className }) => {
                         <NavLink
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/negocio/funcionamiento`}>        
+                            exact to={`${url}/funcionamiento`}>        
                             <Functioning className="icon" size={20}/>
                             <p className="text">Funcionamiento</p>
                         </NavLink>
@@ -36,7 +36,7 @@ const BusinessMenuBase = ({ className }) => {
                         <NavLink
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/negocio/registro`}>        
+                            exact to={`${url}/registro`}>        
                             <Register className="icon" size={20}/>
                             <p className="text">Registro</p>
                         </NavLink>
@@ -45,9 +45,8 @@ const BusinessMenuBase = ({ className }) => {
                         <NavLink
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/negocio/catalogo`}>        
-                            <Download className="icon" size={20}/>
-                            <p className="text">Catálogo</p>
+                            exact to={`${url}/beneficios`}>
+                            <p className="text">Beneficios</p>
                         </NavLink>
                     </li>
                 </ul>

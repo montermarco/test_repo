@@ -27,7 +27,6 @@ const PaqList = () => {
                     precio={paquete.precio}                    
                     paquete={paquete.paquete}
                     fotoCover={paquete.fotoCover}
-                    // category={match.params.category} 
                 />
             )}            
           </PaqListContainer>
@@ -36,19 +35,3 @@ const PaqList = () => {
 };
 
 export default PaqList;
-
-
-/*
-//import useCustomFetch from '../../hooks/useCustomFetch';
-    const [paquetesResponse, setPaquetesResponse] = useState([]);
-    const [url, setUrl] = useState(null);
-    const [results, result, err, loading, paquetes] = useCustomFetch(url);
-
-    useEffect( () => {
-        setUrl(`/paquetes/`)
-    }, [url]);
-
-    useEffect( () => {
-        setPaquetesResponse(paquetes)
-    }, [paquetes]);
-    */

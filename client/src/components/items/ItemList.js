@@ -80,7 +80,6 @@ const ItemList = () => {
                 tamaño={item.tamaño}
                 precio={ new Intl.NumberFormat().format(item.precio)}
                 paquete={item.paquete}
-                category={category}
                 fotoCover={item.fotoCover}
                 idx={item.indice}
                 linkTo={'renta'}

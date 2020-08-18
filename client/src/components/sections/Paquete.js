@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import {PaqContainer} from '../../elements/Container';
 import PaqList from '../items/PaqList';
 import PaqDetail from '../items/PaqDetail';
@@ -8,30 +8,30 @@ import {setFlex, colors, below} from '../../utilities';
 
 
 const PaqueteBase = ({className}) => {
-    return (
-        <>
-            <div className={className}>
-                <div className="title">
-                    <h1 className="title_paquetes">¡Arma tú Paquete!</h1>
-                    <p className="txt_paquetes">Renta un inflable y complementa la diversion añadiendo cualquiera de los siguientes 
-                    productos a un precio increible!...</p>
-                </div>
-                <PaqContainer>
-                    {/* <SearchBar/> */}
-                    <div className="paquetes_list">
-                        <Route exact path={`/paquetes`} component={PaqList}/>
-                        <Route exact path={`/paquetes/:id`} component={PaqDetail}/>
-                    </div>
-                </PaqContainer>
+    
+    let {url} = useRouteMatch();
+
+    return (        
+      <div className={className}>
+        <div className="title">
+            <h1 className="title_paquetes">¡Arma tú Paquete!</h1>
+            <p className="txt_paquetes">Renta un inflable y complementa la diversion añadiendo cualquiera de los siguientes productos a un precio increible!...</p>
+        </div>
+        <PaqContainer>                    
+            <div className="paquetes_list">
+            <Switch>
+                <Route exact path={`${url}`} component={PaqList}/>
+                <Route exact path={`${url}/:id`} component={PaqDetail}/>
+            </Switch>
             </div>
-        </>
+        </PaqContainer>
+      </div>        
     );
 };
 
 const Paquete = styled(PaqueteBase)`
     width: 100%;
     height: 75vh;    
-
 
     .title_paquetes{
         font-size: 3rem;

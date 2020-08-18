@@ -1,11 +1,14 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import styled from 'styled-components';
 import {colors, setFlex, absolute, below, elevation } from '../utilities';
 import {Size} from '../elements/Icons';
 
-const Card = ({ className, nombre, tamaño, precio, paquete, category, id, fotoCover, idx, linkTo }) => {
-    return (
+const Card = ({ className, nombre, tamaño, precio, paquete, id, fotoCover, idx, linkTo }) => {
+   
+  let { category } = useParams();
+
+  return (
         <div className={className}>          
             <Link className="item_link" to={ linkTo === 'renta' ? `/productos/${category}/${id}` : `/venta/catalogo/${category}/${id}`}>
               <div className="item__card">

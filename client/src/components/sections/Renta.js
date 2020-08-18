@@ -7,15 +7,15 @@ import ItemDetail from '../items/ItemDetail';
 
 const Renta = ({className}) => {
     
-    let { path } = useRouteMatch();
+    let {url} = useRouteMatch();
     
     return (        
         <RentContainer className={className}>
           <Menu/>            
-          <div className="item_list"> 
-            <Switch> 
-              <Route exact path={`${path}/:category`} component={ItemList}/>
-              <Route exact path={`${path}/:category/:id`} component={ItemDetail}/>
+          <div className="item_list">             
+            <Switch>
+              <Route exact path={`${url}/:category`} component={ItemList}/>
+              <Route exact path={`${url}/:category/:id`} component={ItemDetail}/>
             </Switch>
           </div>
         </RentContainer>         

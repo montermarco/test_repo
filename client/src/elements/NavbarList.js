@@ -9,9 +9,9 @@ function NavBarBase({ className, open, onClick }) {
         <ul className="nav_list" open={open} onClick={onClick}>
             <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/productos/inflable">Catálogo de renta</NavLink></li>
             <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/paquetes">Renta de paquetes</NavLink></li>
-            <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/venta">Venta</NavLink></li>
-            <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/negocio">Inicia tu negocio</NavLink></li>
-            <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/condiciones">Condiciones</NavLink></li>
+            <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/venta/catalogo/inflable">Venta</NavLink></li>
+            <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/negocio/beneficios">Inicia tu negocio</NavLink></li>
+            <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/condiciones/renta">Condiciones</NavLink></li>
             <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/nosotros">Nosotros</NavLink></li>
             <li className="nav_item"> <NavLink activeClassName="active_link" className="nav_link" exact to="/preguntas">Preguntas Frecuentes</NavLink></li>
         </ul>

@@ -1,24 +1,16 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useRouteMatch} from 'react-router-dom';
 import styled from 'styled-components';
 import {colors, setFlex, absolute, below } from '../utilities';
 import {Size} from '../elements/Icons';
 
-const Card = ({ 
-  className, 
-  nombre, 
-  tamaño, 
-  precio, 
-  paquete, 
-  fotoCover,
-//   category, 
-  id 
-  }) => {
+const Card = ({ className, nombre, tamaño, precio, paquete, fotoCover,id }) => {
+
+    let {url} = useRouteMatch();
 
     return (
-        <div className={className}>
-          <div>
-            <Link className="item_link"to={`/paquetes/${id}`}>
+        <div className={className}>          
+            <Link className="item_link"to={`${url}/${id}`}>
               <div className="item__card">
                 <div className="cover__img">
                   <img 
@@ -41,8 +33,7 @@ const Card = ({
                   <p className="item__price">$ {precio}</p>
                 </div>
               </div>
-            </Link>
-          </div>                
+            </Link>                          
         </div>
     );
 };

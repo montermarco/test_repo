@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {setFlex, colors, elevation, demotion, below} from '../utilities';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 import Rent from '../elements/svg/Rent';
 import Security from '../elements/svg/Security';
 import Payment from '../elements/svg/Payment';
@@ -9,8 +9,9 @@ import Cancellations from '../elements/svg/Cancellations';
 
 const ConditionsMenuBase = ({ className }) => {
     
-    return (
+    let { url } = useRouteMatch();
 
+    return (
         <div className={className}>
             <div className="table">
                 <ul className="nav_list">
@@ -18,7 +19,7 @@ const ConditionsMenuBase = ({ className }) => {
                         <NavLink 
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/condiciones`}>          
+                            exact to={`${url}/renta`}>
                             <Rent className="icon" size={20}/>
                             <p className="text">Renta</p>
                         </NavLink>
@@ -27,7 +28,7 @@ const ConditionsMenuBase = ({ className }) => {
                         <NavLink
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/condiciones/seguridad`}>        
+                            exact to={`${url}/seguridad`}>        
                             <Security className="icon" size={20}/>
                             <p className="text">Seguridad</p>
                         </NavLink>
@@ -36,7 +37,7 @@ const ConditionsMenuBase = ({ className }) => {
                         <NavLink
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/condiciones/pago`}>        
+                            exact to={`${url}/pago`}>        
                             <Payment className="icon" size={20}/>
                             <p className="text">Pago</p>
                         </NavLink>
@@ -45,7 +46,7 @@ const ConditionsMenuBase = ({ className }) => {
                         <NavLink
                             className="nav_link" 
                             activeClassName="active_link"             
-                            exact to={`/condiciones/cancelaciones`}>        
+                            exact to={`${url}/cancelaciones`}>        
                             <Cancellations className="icon" size={20}/>
                             <p className="text">Cancelaciones</p>
                         </NavLink>

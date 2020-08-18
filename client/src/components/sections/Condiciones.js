@@ -12,18 +12,18 @@ import {SectionsContainer} from '../../elements/Container';
 
 const CondicionesBase = ({className}) => {
     
-    let { path } = useRouteMatch();
-    console.log(path)
+    let { url } = useRouteMatch();
+    
     return (
         <SectionsContainer className={className}>
-                <h2 className="condiciones">Condiciones</h2>
+            <h2 className="condiciones">Condiciones</h2>
             <ConditionsMenu/>
             <div className="conditions_list">
               <Switch>
-                <Route exact path={`${path}`} component={CondicionesRenta}/>
-                <Route exact path={`${path}/seguridad`} component={CondicionesSeguridad}/>
-                <Route exact path={`${path}/pago`} component={CondicionesPago}/>
-                <Route exact path={`${path}/cancelaciones`} component={CondicionesCancelacion}/>
+                <Route exact path={`${url}/renta`} component={CondicionesRenta}/>
+                <Route exact path={`${url}/seguridad`} component={CondicionesSeguridad}/>
+                <Route exact path={`${url}/pago`} component={CondicionesPago}/>
+                <Route exact path={`${url}/cancelaciones`} component={CondicionesCancelacion}/>
               </Switch>
             </div>
         </SectionsContainer>

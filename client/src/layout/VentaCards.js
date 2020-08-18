@@ -1,7 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
-import {SliderLink} from '../elements/Button';
 import {SectionsContainer} from '../elements/Container';
 import Variety from '../elements/svg/Variety.jsx';
 import Quality from '../elements/svg/Quality.jsx';
@@ -11,10 +9,9 @@ import Invoice from '../elements/svg/Invoice.jsx';
 import {setFlex, colors, demotion, below, elevation} from '../utilities';
 
 const SalesBase = ({className}) => {
-    return (            
-        
-        <SectionsContainer className={className}>
-        <h3>Venta de juegos infantiles</h3>
+    
+  return (                    
+        <SectionsContainer className={className}>        
         <div className="box_container">
             <div className="box">
                 <div className="icon">
@@ -51,10 +48,7 @@ const SalesBase = ({className}) => {
                 <p className="box_title">Facturación</p>
                 <p className="box_txt">Los precios publicados son más IVA en caso de requerir factura o en pagos con tarjeta de Crédito.</p>
             </div>
-        </div>
-        <SliderLink>
-          <Link to={'/venta/catalogo/inflable'}>Ver catalogo</Link> 
-        </SliderLink>        
+        </div>        
         </SectionsContainer>
         
     );

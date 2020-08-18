@@ -22,7 +22,7 @@ const LittleT = ({className}) => {
       
       <div className="link">
         <SliderLink>
-          <Link to={'/items/little_tike'}>Expolorar</Link> 
+          <Link to={'/productos/little_tike'}>Expolorar</Link> 
         </SliderLink>
       </div>
 

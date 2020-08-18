@@ -22,7 +22,7 @@ const Inflables = ({className}) => {
       
       <div className="link">
         <SliderLink>
-          <Link to={'/items/inflable'}>Expolorar</Link> 
+          <Link to={'/productos/inflable'}>Expolorar</Link> 
         </SliderLink>
       </div>
 

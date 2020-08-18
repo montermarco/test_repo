@@ -13,7 +13,7 @@ const Noryan = ({className}) => {
       <div className="link">
       <p className="txt">CDMX, Estado de México & Cuernavaca</p>
         <SliderLink>
-          <Link to={'/items/inflable'} >Explorar</Link>  
+          <Link to={'/productos/inflable'} >Explorar</Link>  
         </SliderLink>
       </div>                     
     </SliderContainer>

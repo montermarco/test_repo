@@ -23,7 +23,7 @@ function ItemDetail() {
 
     return (
         <ItemDetailContainer>
-            {loading && <Loader/>}                        
+            {loading && <Loader/>}
             { item && <ItemDetailCard
                 nombre={item.nombre}
                 precio={ new Intl.NumberFormat().format(item.precio)}
@@ -34,8 +34,8 @@ function ItemDetail() {
                 fotos={item.fotos}
                 stock={item.stock}
                 indice={item.indice}
-                back={back}                
-            />}            
+                back={back}
+            />}
         </ItemDetailContainer>
     )
 }

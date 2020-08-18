@@ -33,8 +33,7 @@ function SearchItemList( {className}, {match} ) {
                     nombre={item.nombre}
                     tamaño={item.tamaño}
                     precio={item.precio}                    
-                    paquete={item.paquete}
-                    category={match.params.category} 
+                    paquete={item.paquete}                    
                 />
             )}            
           </ItemListContainer>

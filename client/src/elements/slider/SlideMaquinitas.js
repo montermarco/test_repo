@@ -19,7 +19,7 @@ const Maquinitas = ({className}) => {
       </div>
       <div className="link">
         <SliderLink>
-          <Link to={'/items/maquinita'}>Explorar</Link> 
+          <Link to={'/productos/maquinita'}>Explorar</Link> 
         </SliderLink>
       </div>      
     </SliderContainer>

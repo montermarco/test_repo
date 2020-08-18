@@ -21,7 +21,7 @@ const Rockolas = ({className}) => {
       </div>
       <div className="link">
         <SliderLink>
-          <Link to={'/items/rockola'}>Explorar</Link> 
+          <Link to={'/productos/rockola'}>Explorar</Link> 
         </SliderLink>
       </div>
     </SliderContainer>

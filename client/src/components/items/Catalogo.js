@@ -28,7 +28,6 @@ const Catalogo = ({match}) => {
             tamaño={item.tamaño}
             precio={new Intl.NumberFormat().format(item.precioVenta)}
             paquete={item.paquete}
-            category={match.params.category}
             fotoCover={item.fotoCover}
             idx={item.indice}
             linkTo={'venta'}

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useRouteMatch } from 'react-router-dom';
 import { colors, demotion, elevation, setFlex, below, above } from '../utilities';
 import Castle from '../elements/svg/Castle';
 import Fut from '../elements/svg/Fut';
@@ -11,44 +11,46 @@ import LittleTike from '../elements/svg/LittleTike';
 
 
 function CategoryMenu({ className, type}) {
+  
+  let {url} = useRouteMatch()
     
     return (
         <div className={className}>      
         <div className="logo_menu"></div>      
           <ul className="nav_list">
           <li key="inflable" className="nav_item">
-            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `/venta/catalogo/inflable` : `/productos/inflable`}>
+            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `${url}/catalogo/inflable` : `${url}/inflable`}>
               <Castle size={35}/> 
               <p className="nav_txt">inflable</p>
             </NavLink>
           </li>
           <li key="futbolito" className="nav_item">
-            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `/venta/catalogo/futbolito` : `/productos/futbolito`}>          
+            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `${url}/catalogo/futbolito` : `${url}/futbolito`}>          
               <Fut size={35}/>
               <p className="nav_txt">futbolito</p>
             </NavLink>
           </li>
           <li key="maquinita" className="nav_item">
-            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `/venta/catalogo/maquinita` : `/productos/maquinita`}>          
+            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `${url}/catalogo/maquinita` : `${url}/maquinita`}>          
               <Joy size={35}/>
               <p className="nav_txt">maquinita</p>
             </NavLink>
           </li>
           <li key="rockola" className="nav_item">
-            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `/venta/catalogo/rockola` : `/productos/rockola`}>          
+            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `${url}/catalogo/rockola` : `${url}/rockola`}>          
               <Micro size={30}/>
               <p className="nav_txt">rockola</p>
             </NavLink>
           </li>
           <li key="jumping" className="nav_item">
-            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `/venta/catalogo/jumping` : `/productos/jumping`}>
+            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `${url}/catalogo/jumping` : `${url}/jumping`}>
               <Jumping size={35}/>
               <p className="nav_txt">jumping</p>
             </NavLink>
           </li>
           
           <li key="little_tike" className="nav_item">
-            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `/venta/catalogo/little_tike` : `/productos/little_tike`}>          
+            <NavLink className="nav_link" activeClassName="active_link" exact to={ type === 'venta' ? `${url}/catalogo/little_tike` : `${url}/little_tike`}>          
               <LittleTike size={35}/>
               <p className="nav_txt">little tike</p>
             </NavLink>

@@ -19,7 +19,7 @@ const Futbolito = ({className}) => {
         
         <div className="link">
           <SliderLink>
-            <Link to={'/items/futbolito'}>Explorar</Link>
+            <Link to={'/productos/futbolito'}>Explorar</Link>
           </SliderLink>
         </div>
       

@@ -17,7 +17,7 @@ const Jumpings = ({className}) => {
       </div>
 
       <SliderLink>
-          <Link to={'/items/jumping'}>Explorar</Link>  
+          <Link to={'/productos/jumping'}>Explorar</Link>  
       </SliderLink>
 
       <div className="img_box">

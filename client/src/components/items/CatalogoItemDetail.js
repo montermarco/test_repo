@@ -1,21 +1,24 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
+import {useParams, useHistory} from 'react-router-dom';
 import {salesItemDetail} from '../../actions/itemActions.js';
 import {ItemDetailContainer} from '../../elements/Container';
 import ItemDetailCard from '../../layout/ItemDetailCard';
 import Loader from '../../elements/Loader';
 
-function CatalogoItemDetail({match, history}) {
+function CatalogoItemDetail() {
     
     const itemDetail = useSelector(state => state.saleItem);
     const dispatch = useDispatch();
     const {saleItem, loading} = itemDetail;
 
+    let history = useHistory();
+    let { category, id } = useParams();
+
     useEffect( () => {
-        dispatch(salesItemDetail(match.params.category, match.params.id))
-    }, [dispatch, match.params.category, match.params.id]);
-    
-    
+        dispatch(salesItemDetail(category,id))
+    }, [dispatch, category, id]);
+        
     const back = () => history.goBack();
 
     return (
